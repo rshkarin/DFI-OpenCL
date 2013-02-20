@@ -250,9 +250,8 @@ void dfi_process_sinogram(const char* tiff_input, const char* tiff_output, int c
 					    0,
 					    NULL,
 					    &events[0]));
-	//clFinish(command_queue);
 
-    cl_mem zeropad_ifftshift_data_buffer = clCreateBuffer(context,
+    	cl_mem zeropad_ifftshift_data_buffer = clCreateBuffer(context,
 							  CL_MEM_READ_WRITE,
 							  zeropad_data_size,
 							  NULL,
@@ -492,7 +491,7 @@ void dfi_process_sinogram(const char* tiff_input, const char* tiff_output, int c
 				    events + 3,  // event wait list
 				    &events[6]); // event
     CL_CHECK_ERROR(status);
-    clFinish(command_queue);
+    //clFinish(command_queue);
 
     // Copy result from device to host
     /*
@@ -657,13 +656,16 @@ void dfi_process_sinogram(const char* tiff_input, const char* tiff_output, int c
     clFFT_DestroyPlan(plan_2difft);
     clFFT_DestroyPlan(plan_1dfft_sinogram);
 
-  /* Stop timer */
-  gettimeofday(&global_tim, NULL);
-  t2_global = global_tim.tv_sec+(global_tim.tv_usec/1000000.0);
-  printf("\n(Total time - timeofday) %.6lf seconds elapsed\n", t2_global-t1_global);
 
     //timing
     float ms = 0.0, total_ms = 0.0, global_ms = 0.0, deg = 1.0e-6f;
+ 
+      /* Stop timer */
+  gettimeofday(&global_tim, NULL);
+  t2_global = global_tim.tv_sec+(global_tim.tv_usec/1000000.0);
+  printf("\n(Total time - timeofday) %f seconds elapsed\n", (t2_global-t1_global)*1000.0);
+
+
     cl_ulong start, end;
 
     CL_CHECK_ERROR(clGetEventProfilingInfo(events[0], CL_PROFILING_COMMAND_START,sizeof(cl_ulong), &start, NULL));

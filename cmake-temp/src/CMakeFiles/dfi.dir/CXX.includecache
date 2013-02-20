@@ -13,6 +13,8 @@ stdlib.h
 -
 sys/stat.h
 -
+sys/time.h
+-
 string.h
 -
 iostream
