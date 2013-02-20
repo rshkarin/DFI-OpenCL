@@ -1,1 +1,1 @@
-/home/rshkarin/various-workspace/DFR_opencl_apple/cmake-temp/src/CMakeFiles/dfi.dir
+/home/rshkarin/workspace/dfr-opencl-oclfft/cmake-temp/src/CMakeFiles/dfi.dir

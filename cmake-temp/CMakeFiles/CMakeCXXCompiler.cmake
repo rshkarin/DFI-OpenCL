@@ -1,6 +1,7 @@
 SET(CMAKE_CXX_COMPILER "/usr/bin/c++")
 SET(CMAKE_CXX_COMPILER_ARG1 "")
 SET(CMAKE_CXX_COMPILER_ID "GNU")
+SET(CMAKE_CXX_COMPILER_VERSION "4.7.1")
 SET(CMAKE_CXX_PLATFORM_ID "Linux")
 
 SET(CMAKE_AR "/usr/bin/ar")
@@ -47,4 +48,4 @@ SET(CMAKE_CXX_HAS_ISYSROOT "")
 
 
 SET(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;c")
-SET(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/lib64/gcc/x86_64-suse-linux/4.6;/usr/lib64;/lib64;/usr/x86_64-suse-linux/lib")
+SET(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/lib64/gcc/x86_64-suse-linux/4.7;/usr/lib64;/lib64;/usr/x86_64-suse-linux/lib")

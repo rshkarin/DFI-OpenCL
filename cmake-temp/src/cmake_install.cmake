@@ -1,4 +1,4 @@
-# Install script for directory: /home/rshkarin/various-workspace/DFR_opencl_apple/src
+# Install script for directory: /home/rshkarin/workspace/dfr-opencl-oclfft/src
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

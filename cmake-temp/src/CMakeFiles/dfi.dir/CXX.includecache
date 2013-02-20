@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/rshkarin/various-workspace/DFR_opencl_apple/src/main.cpp
+/home/rshkarin/workspace/dfr-opencl-oclfft/src/main.cpp
 cstdio
 -
 stdlib.h
@@ -198,16 +198,8 @@ glib/gerror.h
 time.h
 -
 
-/usr/include/glib-2.0/glib/gcache.h
-glib/glist.h
--
-
 /usr/include/glib-2.0/glib/gchecksum.h
 glib/gtypes.h
--
-
-/usr/include/glib-2.0/glib/gcompletion.h
-glib/glist.h
 -
 
 /usr/include/glib-2.0/glib/gconvert.h
@@ -360,10 +352,6 @@ glib/gtypes.h
 glib/gerror.h
 -
 glib/gstring.h
--
-
-/usr/include/glib-2.0/glib/grel.h
-glib/gtypes.h
 -
 
 /usr/include/glib-2.0/glib/gscanner.h

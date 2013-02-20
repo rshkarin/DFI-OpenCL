@@ -4,15 +4,26 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/rshkarin/various-workspace/DFR_opencl_apple/src/main.cpp" "/home/rshkarin/various-workspace/DFR_opencl_apple/cmake-temp/src/CMakeFiles/dfi.dir/main.cpp.o"
+  "/home/rshkarin/workspace/dfr-opencl-oclfft/src/main.cpp" "/home/rshkarin/workspace/dfr-opencl-oclfft/cmake-temp/src/CMakeFiles/dfi.dir/main.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 SET(CMAKE_TARGET_DEFINITIONS
-  "G_LOG_DOMAIN=\"ART\""
+  "G_LOG_DOMAIN=\"DFI\""
   )
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
   )
+
+# The include file search paths:
+SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "/usr/include/glib-2.0"
+  "/usr/lib64/glib-2.0/include"
+  "/usr/local/include"
+  "src"
+  )
+SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

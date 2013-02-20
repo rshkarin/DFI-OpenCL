@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <stdlib.h>
 #include <sys/stat.h>
+#include <sys/time.h>
 #include <string.h>
 #include <iostream>
 #include <fstream>
@@ -219,6 +220,11 @@ void dfi_process_sinogram(const char* tiff_input, const char* tiff_output, int c
 	int size_s = size_zeropad_s;
 
 	float d_omega_s = 2 * M_PI / (size_zeropad_s * dx); //normalized ratio [0; 2PI]
+
+  /* Start timer */
+  timeval global_tim;
+  gettimeofday(&global_tim, NULL);
+  double t1_global = global_tim.tv_sec + (global_tim.tv_usec/1000000.0), t2_global = 0.0;
 
 	/////////////////////////////////////
 	/* Sinogram shifting + Zeropadding */
@@ -650,6 +656,11 @@ void dfi_process_sinogram(const char* tiff_input, const char* tiff_output, int c
     CL_CHECK_ERROR(clFinish(command_queue));
     clFFT_DestroyPlan(plan_2difft);
     clFFT_DestroyPlan(plan_1dfft_sinogram);
+
+  /* Stop timer */
+  gettimeofday(&global_tim, NULL);
+  t2_global = global_tim.tv_sec+(global_tim.tv_usec/1000000.0);
+  printf("\n(Total time - timeofday) %.6lf seconds elapsed\n", t2_global-t1_global);
 
     //timing
     float ms = 0.0, total_ms = 0.0, global_ms = 0.0, deg = 1.0e-6f;

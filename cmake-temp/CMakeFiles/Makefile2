@@ -16,7 +16,7 @@ preinstall:
 #=============================================================================
 # Special targets provided by cmake.
 
-# Disable implicit rules so canoncical targets will work.
+# Disable implicit rules so canonical targets will work.
 .SUFFIXES:
 
 # Remove some rules from gmake that .SUFFIXES does not remove.
@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rshkarin/various-workspace/DFR_opencl_apple
+CMAKE_SOURCE_DIR = /home/rshkarin/workspace/dfr-opencl-oclfft
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rshkarin/various-workspace/DFR_opencl_apple/cmake-temp
+CMAKE_BINARY_DIR = /home/rshkarin/workspace/dfr-opencl-oclfft/cmake-temp
 
 #=============================================================================
 # Directory level rules for directory src
@@ -74,7 +74,7 @@ src/preinstall:
 src/CMakeFiles/dfi.dir/all:
 	$(MAKE) -f src/CMakeFiles/dfi.dir/build.make src/CMakeFiles/dfi.dir/depend
 	$(MAKE) -f src/CMakeFiles/dfi.dir/build.make src/CMakeFiles/dfi.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/rshkarin/various-workspace/DFR_opencl_apple/cmake-temp/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/rshkarin/workspace/dfr-opencl-oclfft/cmake-temp/CMakeFiles  1
 	@echo "Built target dfi"
 .PHONY : src/CMakeFiles/dfi.dir/all
 
@@ -84,9 +84,9 @@ all: src/CMakeFiles/dfi.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/dfi.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rshkarin/various-workspace/DFR_opencl_apple/cmake-temp/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rshkarin/workspace/dfr-opencl-oclfft/cmake-temp/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/dfi.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rshkarin/various-workspace/DFR_opencl_apple/cmake-temp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rshkarin/workspace/dfr-opencl-oclfft/cmake-temp/CMakeFiles 0
 .PHONY : src/CMakeFiles/dfi.dir/rule
 
 # Convenience name for target.
