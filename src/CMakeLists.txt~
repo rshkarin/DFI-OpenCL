@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 2.6)
+
+# --- Set sources -------------------------------------------------------------
+set(dfi_SRCS 
+    main.cpp
+    )
+
+set(dfi_HDRS
+    )
+
+# --- Find packages and libraries ---------------------------------------------
+set(dfi_LIBS
+    ${OPENCL_LIBRARIES}
+    ${GLIB2_LIBRARIES}
+    ${GOBJECT2_LIBRARIES}
+    ${OCLFFT_LIBRARIES}
+    )
+
+find_package(TIFF)
+if (TIFF_FOUND)
+    set(dfi_LIBS ${dfi_LIBS} ${TIFF_LIBRARIES})
+    include_directories(${TIFF_INCLUDE_DIRS})
+endif ()
+
+# --- Target ------------------------------------------------------------------
+include_directories(
+    ${CMAKE_CURRENT_BINARY_DIR}
+    )
+
+add_executable(${PROJECT} ${dfi_SRCS})
+target_link_libraries(${PROJECT}  ${dfi_LIBS})

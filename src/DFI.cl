@@ -6,6 +6,8 @@ typedef struct {
 } clFFT_Complex;
 
 
+__kernel void clboost() {}
+
 __kernel void linear_interp(__global int *iparams,
 							__global float *fparams,
 							__global clFFT_Complex *input,
@@ -47,7 +49,7 @@ __kernel void linear_interp(__global int *iparams,
     	
 		//range values along interp_cols and interp_rows
     	float omega_y = (interp_rows/2.0f * norm_ratio) - ((row*interp_cols + col)*norm_ratio/interp_cols);
-    	float omega_x = (interp_rows/2.0f * norm_ratio) - (((row*interp_cols + col)%interp_cols)*norm_ratio);
+    	float omega_x = (((row*interp_cols + col)%interp_cols)*norm_ratio) - (interp_rows/2.0f * norm_ratio);
       
     	//get angle in radians 
     	float atan_val = atan2(omega_y, omega_x);
@@ -160,7 +162,7 @@ __kernel void zero_ifftshift(__global clFFT_Complex *input, int in_rows, int in_
 __kernel void fftshift(__global clFFT_Complex *input, int in_rows, int in_cols, 
 				       __global clFFT_Complex *output, int out_rows, int out_cols)
 {
-	uint elemID = get_global_id(0);
+    uint elemID = get_global_id(0);
     uint global_size = get_global_size(0);
     
     long data_length = in_cols * in_rows;
@@ -193,6 +195,7 @@ __kernel void fftshift(__global clFFT_Complex *input, int in_rows, int in_cols,
 	        }      
 	    }
      }
+  
 }
 
 __kernel void shift2d(__global clFFT_Complex *input, __global clFFT_Complex *output, int rows, int cols, int isInverse)

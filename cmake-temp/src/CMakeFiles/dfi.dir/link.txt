@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/dfi.dir/main.cpp.o  -o ../../build/dfi -rdynamic -lOpenCL -lglib-2.0 -lgobject-2.0 -lgthread-2.0 -lrt -lglib-2.0 /usr/local/lib/liboclfft.so -ltiff -lgobject-2.0 -lgthread-2.0 -lrt /usr/local/lib/liboclfft.so -ltiff -Wl,-rpath,/usr/local/lib 
